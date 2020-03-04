@@ -223,7 +223,6 @@ public:
 			}
 			
 			if (brd[0][i] == brd[1][i] && brd[0][i] == brd[2][i] && brd[0][i] != ' ') {
-				cout << brd[0][i] << "      " << i << endl;
 				switch (brd[0][i])
 
 				{
@@ -469,7 +468,6 @@ int main()
 	while (GetKeyState(32) < 1 || GetKeyState(32) < 0) {
 
 		b.strongPrintBoard();
-		b.easyPrintBoard();
 
 		while (p == 0) {
 
@@ -558,11 +556,10 @@ int main()
 		if (bt.bestSolution(b) == 1) {
 
 			cout << "Draw!";
-
+			Sleep(10000);
 			return 0;
 
 		}
-		cout << b.checkWinner();
 		if (b.checkWinner() != -1) {
 
 			if (b.checkWinner() == 1) {
@@ -570,7 +567,7 @@ int main()
 				b.strongPrintBoard();
 
 				cout << "I win";
-
+				Sleep(10000);
 				return 0;
 
 			}
@@ -580,6 +577,7 @@ int main()
 				b.strongPrintBoard();
 
 				cout << "You win";
+				Sleep(10000);
 
 				return 0;
 
@@ -592,8 +590,6 @@ int main()
 		system("cls");
 
 	}
-	cin;
-	system("pause");
 	return 0;
 
 }
